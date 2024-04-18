@@ -1,0 +1,20 @@
+{
+  "name": "bitwise-permission-example",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npx nodemon app.js"
+  },
+  "repository": "git@github.com:SimonSun1988/bitwise-permission-example.git",
+  "author": "Simon Sun",
+  "license": "None",
+  "dependencies": {
+    "@koa/router": "^12.0.1",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa2-cors": "^2.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
