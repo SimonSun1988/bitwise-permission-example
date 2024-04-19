@@ -13,8 +13,21 @@ const libs = require('./libs');
 app.use(cors());
 app.use(koaBody());
 
+router.get('/', (ctx, next) => {
+  console.log(ctx.query)
+  ctx.body = ctx.query;
+});
+
+
 router.get('/permissions-map', (ctx, next) => {
-  ctx.body = permissions;
+  const result = {};
+  Object.keys(permissions).forEach((groupName) => {
+    result[groupName] = {};
+    permissions[groupName].forEach((action, index) => {
+      result[groupName][action] = 2 ** index;
+    });
+  });
+  ctx.body = result;
 });
 
 router.get('/get-my-permissions', async (ctx, next) => {
